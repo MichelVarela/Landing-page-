@@ -404,6 +404,7 @@ main .pasos .lista-pasos .content-lista ul li{
 main .pasos .lista-pasos .content-lista ul li i{
     font-size: 2.5rem;
     color: #fff;
+    cursor: pointer;
 }
 
 .content-lista .pasos-detail{
