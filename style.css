@@ -1,0 +1,902 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input:focus,
+textarea:focus{
+    outline: transparent;
+}
+
+textarea{
+    resize: none;
+}
+
+:root{
+    --colorAzul: #112d4e;
+    --sombreado: rgba(0, 0, 0, 0.3);
+    --gradientAzul: linear-gradient(180deg, rgba(17,45,78,0.5) 50%, rgba(0,0,0,0.5));
+    --shadow: 0px 9px 10px 0px rgba(17,45,78,1);
+    --buttonShadow: 0 8px 6px -6px #000;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: var(--colorAzul);
+    padding: 10px 0;
+    z-index: 2;
+}
+
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header nav a img{
+    width: 120px;
+    margin-left: 10px;
+}
+
+header nav .icons{
+    margin-right: 10px;
+}
+
+header nav .icons i{
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+header nav .icons i:hover{
+    transform: scale(1.1);
+}
+
+/* content-nav */
+header nav .content-nav{
+    position: absolute;
+    top: 46px;
+    left: 0;
+    background-color: var(--colorAzul);
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.content-nav.on-content-nav{
+    height: 170px;
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.content-nav ul{
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-nav ul li:hover{
+    transform: scale(1.1);
+}
+
+.content-nav ul li a{
+    color: #fff;
+}
+
+/* banner */
+.banner{
+    background-image: url('./team.jpg');
+    background-size: cover;
+    background-position-x: center;
+    height: 500px;
+    position: relative;
+    top: 55px;
+    z-index: -1;
+}
+
+.banner .sombra{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: var(--gradientAzul);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banner article{
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner article h2{
+    font-size: 1.3rem;
+}
+
+.banner article h3{
+    align-self: flex-end;
+}
+
+/* main */
+main{
+    margin-top: 55px;
+}
+
+/* servicios */
+main .servicios .title{
+    background-color: var(--colorAzul);
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 110px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    font-weight: normal;
+}
+
+main .servicios article{
+    width: 100%;
+}
+
+main .servicios article img{
+    width: 100%;
+}
+
+main .servicios article div{
+    color: var(--colorAzul);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .servicios article div h2{
+    text-decoration: underline;
+    text-decoration-color: var(--colorAzul);
+    margin-bottom: 20px;
+}
+
+main .servicios .section-dos div ul li{
+    text-align: left;
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+main .servicios div button{
+    padding: 5px 30px;
+    margin: 20px 0;
+    background-color: var(--colorAzul);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--buttonShadow);
+    align-self: flex-end;
+}
+
+/* packs */
+main .paquetes .title{
+    color: var(--colorAzul);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+main .paquetes .content-pack{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+main .paquetes .content-pack .pack{
+    width: 100%;/* toma el valor del padre grid 1FR */
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+main .paquetes .content-pack .pack:nth-child(1){
+    background-color: rgba(17,45,78,0.9);
+}
+
+main .paquetes .content-pack .pack:nth-child(2){
+    background-color: rgba(17,45,78,0.7);
+}
+
+main .paquetes .content-pack .pack:nth-child(3){
+    background-color: rgba(17,45,78,0.5);
+}
+
+main .paquetes .content-pack .pack:nth-child(4){
+    background-color: rgba(17,45,78,0.3);
+}
+
+main .paquetes .content-pack .pack h2{
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    letter-spacing: 1px;
+}
+
+main .paquetes .content-pack .pack button{
+    padding: 5px 30px;
+    margin: 20px 0;
+    background-color: var(--colorAzul);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--buttonShadow);
+}
+
+main .project{
+    background-image: url('./lapicera.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    z-index: -1;
+}
+
+main .project .sombra{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17,45,78,0.5);
+    z-index: -1;
+}
+
+main .project .content-project{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+main .project .content-project h5{
+    font-weight: lighter;
+}
+
+main .project .content-project ul li h4{
+    margin: 10px 0;
+}
+
+/* tecnologias */
+main .tecno{
+    margin: 20px 0;
+}
+
+main .tecno .icons-logos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+main .tecno .icons-logos img{
+    width: 40px;
+    align-self: center;
+    justify-self: center;
+}
+
+main .tecno h2{
+    margin-top: 50px;
+    color: var(--colorAzul);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+/* pasos */
+main .pasos .presupuesto{
+    background-color: var(--colorAzul);
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.presupuesto h2{
+    color: #fff;
+    letter-spacing: 1px;
+    width: 200px;
+    text-align: center;
+}
+
+.presupuesto button{
+    background-color: #fff;
+    color: var(--colorAzul);
+    padding: 10px 30px;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--buttonShadow);
+}
+
+main .pasos .lista-pasos h2{
+    width: 100%;
+    height: 100px;
+    background-color: var(--colorAzul);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 100px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+main .pasos .lista-pasos .content-lista{
+    background-image: url('./fondo_pasos.jpg');
+    background-size: cover;
+    background-position-x: center;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+main .pasos .lista-pasos .content-lista .sombra{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--gradientAzul);
+}
+
+main .pasos .lista-pasos .content-lista ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+main .pasos .lista-pasos .content-lista ul li{
+    z-index: 1;
+}
+
+main .pasos .lista-pasos .content-lista ul li i{
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.content-lista .pasos-detail{
+    position: relative;
+    width: 100%;
+}
+
+.content-lista .pasos-detail article{
+    position: absolute;
+    top: 0;
+    right: 3%;
+    padding: 20px;
+    width: 300px;
+    background-color: var(--sombreado);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+}
+
+main .pasos .lista-pasos .content-lista ul li.on-item-pasos{
+    transform: scale(1.5);
+    transition: all .3s;
+}
+
+.content-lista .pasos-detail article.on-pasos-detail{
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s;
+}
+
+/* nosotros */
+main .nosotros{
+    margin-bottom: 50px;
+}
+
+main .nosotros .title{
+    background-color: var(--colorAzul);
+    box-shadow: var(--shadow);
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 120px;
+    margin-bottom: 50px;
+}
+
+main .nosotros .title img{
+    width: 120px;
+}
+
+main .nosotros .title h2{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+/* group-glider */
+
+main .nosotros .group-work{
+    margin-bottom: 50px;
+}
+
+main .nosotros .group div{
+    width: 200px;
+    height: 350px;
+    padding: 10px;
+}
+
+main .nosotros .group div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .nosotros .group-work p{
+    text-align: center;
+    color: var(--colorAzul);
+    padding: 20px;
+}
+
+/* individual-glider */
+main .nosotros .individual-detail{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: var(--colorAzul);
+    text-align: center;
+}
+
+main .nosotros .individual-detail img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main .nosotros .individual-detail h3{
+    width: 200px;
+    letter-spacing: 1px;
+}
+
+main .nosotros .individual-detail p{
+    width: 200px;
+    margin: 20px 0;
+}
+
+main .nosotros .individual-detail a i{
+    color: var(--colorAzul);
+    font-size: 1.5rem;
+}
+
+/* arrows-indicadores */
+.nosotros .individual .glider-prev {
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    z-index: 0;
+}
+
+.nosotros .individual .glider-prev,
+.nosotros .individual .glider-next {
+    width: 25px;
+    height: 25px;
+    line-height: 0;
+    color: #fff;
+    background-color: var(--colorAzul);
+}
+
+.nosotros .individual .glider-next {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    z-index: 0;
+}
+
+/* formulario */
+main .form img{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+main .form form .form-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.form-content h2{
+    color: var(--colorAzul);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--colorAzul);
+    margin-bottom: 20px;
+    align-self: flex-end;
+}
+
+.form-content div{
+    margin-bottom: 20px;
+}
+
+.form-content label{
+    color: var(--colorAzul);
+}
+
+.form-content input,
+.form-content textarea{
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid rgba(17,45,78,0.5);
+    margin-top: 5px;
+}
+
+.form-content textarea{
+    height: 200px;
+    padding-top: 10px;
+}
+
+.form-content button{
+    background-color: var(--colorAzul);
+    color: #fff;
+    padding: 5px 30px;
+    align-self: flex-end;
+    border: none;
+}
+
+/* footer */
+footer{
+    background-color: var(--colorAzul);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    color: #fff;
+}
+
+footer .logo-content{
+    justify-self: center;
+    text-align: center;
+}
+
+footer .logo-content img{
+    width: 150px;
+}
+
+footer .logo-content h2{
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+footer .ruta-navegacion{
+    justify-self: center;
+    text-align: center;
+}
+
+footer .ruta-navegacion h2{
+    letter-spacing: 1px;
+}
+
+footer .ruta-navegacion ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .ruta-navegacion li{
+    margin-right: 3px;
+}
+
+footer .ruta-navegacion li a{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+footer .redes{
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+
+footer .redes ul li{
+    margin: 10px 0;
+}
+
+footer .redes ul li a{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+footer .redes ul li a i{
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+footer .copy p{
+    font-size: 0.8rem;
+    font-weight: lighter;
+    text-align: end;
+}
+
+.whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp a img{
+    width: 50px;
+}
+
+@media(min-width: 575px){
+    /* formulario */
+    main .form{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main .form form{
+        width: 70%;
+    }
+    
+    main .form img{
+        width: 30%;
+        object-fit: cover;
+    }
+}
+
+@media(min-width: 768px){
+    /* content-nav */
+    .content-nav.on-content-nav{
+        height: 50px;
+    }
+    
+    .content-nav ul{
+        height: 50px;
+        flex-direction: row;
+    }
+    
+    /* banner */
+    .banner{
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    
+    /* main */
+    main{
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    
+    main .servicios .title{
+        margin-bottom: 50px;
+    }
+    
+    main .servicios article{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    main .servicios .section-dos{
+        flex-direction: row-reverse;
+    }
+    
+    main .servicios article img{
+        width: 50%;
+    }
+    
+    main .servicios article div{
+        width: 50%;
+    }
+    
+    /* pack */
+    main .paquetes .content-pack{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    /* project */
+    main .project .sombra{
+        width: 50%;
+    }
+    
+    main .project .content-project{
+        width: 50%;
+    }
+    
+    /* pasos */
+    main .pasos .lista-pasos .content-lista ul{
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 50px;
+        height: 435px;
+        width: 100px;
+    }
+    
+    .content-lista .pasos-detail article{
+        top: -350px;
+        right: 30%;
+    }
+
+    /* footer */
+    footer{
+        display: grid;
+        grid-template-areas: 'areaA areaB areaC' 'areaD areaD areaD';
+        height: 300px;
+        align-items: center;
+    }
+
+    footer .logo-content{
+        grid-area: areaA;
+        width: 200px;
+    }
+
+    footer .ruta-navegacion{
+        grid-area: areaB;
+        width: 200px;
+    }
+
+    footer .redes{
+        grid-area: areaC;
+    }
+
+    footer .copy{
+        grid-area: areaD;
+    }
+
+    footer .ruta-navegacion h2{
+        text-align: start;
+    }
+
+    footer .ruta-navegacion ul{
+        justify-content: flex-start;
+    }
+
+    footer .ruta-navegacion li a{
+        font-size: 0.7rem;
+    }
+
+    footer .redes{
+        border-top: none;
+        border-left: 1px solid #fff;
+        padding-top: 0;
+        padding-left: 20px;
+    }
+
+    footer .redes ul li a{
+        font-size: 0.7rem;
+    }
+
+    footer .redes ul li a i{
+        font-size: 1.1rem;
+    }
+    
+    footer .copy{
+        align-self: end;
+    } 
+}
+
+@media(min-width: 992px){
+    /* banner */
+    .banner{
+        max-width: 960px;
+        background-position: center;
+        height: 600px;
+    }
+    
+    /* main */
+    main{
+        max-width: 960px;
+    }
+    
+    /* project */
+    main .project{
+        height: 600px;
+    }
+    
+    /* pasos */
+    main .pasos .lista-pasos .content-lista{
+        background-position: center;
+    }
+}
+
+@media(min-width: 1024px){
+    header nav .icons i:nth-child(3){
+        display: none;
+    }
+    
+    /* content-nav */
+    header nav .content-nav{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 500px;
+        height: 25px;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .content-nav ul{
+        height: 25px;
+    }
+    
+    .content-nav ul li {
+        border-right: 1px solid #fff;
+        padding: 0 10px;
+    }
+    
+    .content-nav ul li:nth-child(4){
+        border-right: none;
+    }
+    
+    /* pasos */
+    .content-lista .pasos-detail article{
+        right: 45%;
+    }
+    
+}
+
+@media(min-width: 1200px){
+    /* banner */
+    .banner{
+        max-width: 1140px;
+    }
+    
+    /* main */
+    main{
+        max-width: 1140px;
+    }
+}
